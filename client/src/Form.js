@@ -6,71 +6,56 @@ export default class Form extends React.Component {
 
     this.state = {
       customer: {
-        firstName: props.firstName,
-        lastName: props.lastName,
-        status: props.status,
+        meetingId: props.meetingId,
+        displayName: props.displayName,
       },
     };
   }
 
-  handleFirstNameChanged(event) {
+  handleMeetingIdChanged(event) {
     var customer = this.state.customer;
-    customer.firstName = event.target.value;
+    customer.meetingId = event.target.value;
 
     this.setState({ customer: customer });
   }
-
-  handleLastNameChanged(event) {
+  handleDisplayNameChanged(event) {
     var customer = this.state.customer;
-    customer.lastName = event.target.value;
-
-    this.setState({ customer: customer });
-  }
-
-  handleStatusChanged(event) {
-    var customer = this.state.customer;
-    customer.status = event.target.value;
+    customer.displayName = event.target.value;
 
     this.setState({ customer: customer });
   }
 
   handleButtonClicked() {
-    this.startMeeting(
-      this.state.customer.firstName,
-      this.state.customer.lastName
-    );
-    console.log(this.state.customer.firstName);
-    console.log(this.state.customer.lastName);
+    const meetingId = this.state.customer.meetingId;
+    const displayName = this.state.customer.displayName;
+    console.log(meetingId, displayName);
   }
 
   render() {
     return (
       <div>
-        <label>First Name:</label>
-        <input
-          type="text"
-          value={this.state.customer.firstName}
-          onChange={this.handleFirstNameChanged.bind(this)}
-        />
-        <br />
-        <label>Last Name:</label>
-        <input
-          type="text"
-          value={this.state.customer.lastName}
-          onChange={this.handleLastNameChanged.bind(this)}
-        />
-        <br />
-        <label>Status:</label>
-        <select
-          value={this.state.customer.status}
-          onChange={this.handleStatusChanged.bind(this)}
-        >
-          <option value="PENDING">Pending</option>
-        </select>
-        <hr />
-        <button onClick={this.handleButtonClicked.bind(this)}>
-          Save Record
-        </button>
+        <div className="container welcome-page mt-5">
+          Display Name:{" "}
+          <input
+            className="form-control"
+            id="txtDispNme"
+            type="text"
+            value={this.state.customer.meetingId}
+            onChange={this.handleMeetingIdChanged.bind(this)}
+          />
+          Meeting Name:
+          <input
+            className="form-control"
+            type="text"
+            value={this.state.customer.displayName}
+            onChange={this.handleDisplayNameChanged.bind(this)}
+          />
+          <hr />
+          <button onClick={this.handleButtonClicked.bind(this)}>
+            Save Record
+          </button>
+          <br />
+        </div>
       </div>
     );
   }
