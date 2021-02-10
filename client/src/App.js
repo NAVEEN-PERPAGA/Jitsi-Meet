@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { } from "react";
 import "./App.css";
 import Demo from "./demo";
 class App extends React.Component {
@@ -12,18 +12,17 @@ class App extends React.Component {
   startMeet = (e) => {
     e.preventDefault();
     this.handleClick();
-    const btnStart = () => {
-      console.log(this.state.meetingId);
-      //   const [meetingId, setMeetingId] = useState("");
-      //   const [displayName, setDisplayName] = useState("");
-      //   StartMeeting(setMeetingId, setDisplayName);
-    };
+    // const btnStart = () => {
+    //   console.log(this.state.meetingId);
+    //   //   const [meetingId, setMeetingId] = useState("");
+    //   //   const [displayName, setDisplayName] = useState("");
+    //   //   StartMeeting(setMeetingId, setDisplayName);
+    // };
   };
 
- 
   render() {
     return (
-      <div className="container main-body">
+      <div>
         <Demo />
       </div>
     );
