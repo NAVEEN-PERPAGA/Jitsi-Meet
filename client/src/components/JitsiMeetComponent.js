@@ -3,10 +3,6 @@ import ProgressComponent from "@material-ui/core/CircularProgress";
 
 function JitsiMeetComponent() {
   const [loading, setLoading] = useState(false);
-  const containerStyle = {
-    width: "800px",
-    height: "400px",
-  };
 
   const jitsiContainerStyle = {
     display: loading ? "none" : "block",
@@ -18,12 +14,12 @@ function JitsiMeetComponent() {
     try {
       const domain = "meet.jit.si";
       const options = {
-        roomName: "roomName",
-        height: 400,
+        roomName: "Neeraj",
+        height: 590,
         parentNode: document.getElementById("jitsi-container"),
         interfaceConfigOverwrite: {
           filmStripOnly: false,
-          SHOW_JITSI_WATERMARK: false,
+          SHOW_JITSI_WATERMARK: true,
         },
         configOverwrite: {
           disableSimulcast: false,
@@ -48,7 +44,7 @@ function JitsiMeetComponent() {
   }, []);
 
   return (
-    <div style={containerStyle}>
+    <div>
       {loading && <ProgressComponent />}
       <div id="jitsi-container" style={jitsiContainerStyle} />
     </div>

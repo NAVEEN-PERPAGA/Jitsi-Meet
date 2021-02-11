@@ -1,11 +1,11 @@
 import React from "react";
-import Demo from './Demo'
-import JitsiMeetComponent from "./JitsiMeetComponent";
+import Main from "./components/Main";
 export const App = () => {
-  return <div>
-  
-  <Demo />
-  </div>;
+  return (
+    <div>
+      <Main />
+    </div>
+  );
 };
 
 export default App;

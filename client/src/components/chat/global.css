@@ -1,0 +1,51 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+.appbar{
+top: 85vh;
+position: fixed;
+}
+
+.main{
+   height: 80vh;
+    overflow-y: scroll;
+    border-right: none;
+}
+
+.main::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+
+  /* Handle */
+  .main::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .main::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+
+.chat{
+    height: 80vh;    
+}
+.main-div{
+    width: 20vw;
+}
+/* chat window  */
+.name{
+    color: red;
+    float: left;  
+    
+}
+
+
+/* footer css  */
+.inputPlaceholder [type="text"]{
+    font-size: 0.8rem !important;
+}
