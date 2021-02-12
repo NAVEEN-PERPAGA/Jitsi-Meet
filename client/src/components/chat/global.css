@@ -1,51 +1,40 @@
-*{
-    margin: 0; padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.appbar{
-top: 85vh;
-position: fixed;
+.chats {
+  height: 78vh;
+  overflow-y: scroll;
+  border-right: none;
 }
-
-.main{
-   height: 80vh;
-    overflow-y: scroll;
-    border-right: none;
-}
-
 .main::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-/* Track */
-
-  /* Handle */
-  .main::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  .main::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-
-
-
-.chat{
-    height: 80vh;    
+  width: 10px;
 }
-.main-div{
-    width: 20vw;
-}
+
 /* chat window  */
-.name{
-    color: red;
-    float: left;  
-    
+
+.innerChatName {
+  margin: 0px 0px 0px 10px;
+  background-color: rgb(65, 35, 35);
 }
 
-
-/* footer css  */
-.inputPlaceholder [type="text"]{
-    font-size: 0.8rem !important;
+.name {
+  background-color: rgb(212, 212, 212);
+  border-radius: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  color: rgb(15, 0, 0);
+  float: left;
+  font-weight: 900;
+}
+.outerChat {
+  margin: 20px 20px 0px 20px;
+  word-wrap: break-word;
+}
+.content {
+  font-weight: 700;
+  background-color: rgb(220, 248, 198);
+  color: #000;
+  border-radius: 20px;
+  padding-left: 10px 100px;
 }

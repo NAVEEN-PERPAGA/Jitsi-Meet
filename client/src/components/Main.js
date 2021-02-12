@@ -14,7 +14,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Chat from "./chat/Chat";
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +54,8 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
   },
   drawerHeader: {
+    backgroundColor: "rgb(63, 81, 181)",
+
     display: "flex",
     alignItems: "center",
 
@@ -139,7 +141,7 @@ export default function Main() {
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} style={{ color: "#fff" }}>
             {theme.direction === "rtl" ? (
               <ChevronLeftIcon />
             ) : (

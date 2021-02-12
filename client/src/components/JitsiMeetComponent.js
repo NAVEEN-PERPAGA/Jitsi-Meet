@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ProgressComponent from "@material-ui/core/CircularProgress";
-
 function JitsiMeetComponent() {
   const [loading, setLoading] = useState(false);
 
   const jitsiContainerStyle = {
     display: loading ? "none" : "block",
     width: "100%",
-    height: "100%",
+    height: "90vh",
   };
 
   function startConference() {
@@ -15,7 +14,7 @@ function JitsiMeetComponent() {
       const domain = "meet.jit.si";
       const options = {
         roomName: "Neeraj",
-        height: 590,
+
         parentNode: document.getElementById("jitsi-container"),
         interfaceConfigOverwrite: {
           filmStripOnly: false,
@@ -46,7 +45,7 @@ function JitsiMeetComponent() {
   return (
     <div>
       {loading && <ProgressComponent />}
-      <div id="jitsi-container" style={jitsiContainerStyle} />
+      <div id="jitsi-container" style={jitsiContainerStyle} className="jitsi" />
     </div>
   );
 }

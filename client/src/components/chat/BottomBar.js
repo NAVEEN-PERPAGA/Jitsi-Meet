@@ -1,16 +1,21 @@
 import React from "react";
-
 import { fade, makeStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
 import Toolbar from "@material-ui/core/Toolbar";
 
 import ChatIcon from "@material-ui/icons/Chat";
-import FaceIcon from "@material-ui/icons/Face";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import "./global.css";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     bottom: 0,
     top: "auto",
+  },
+  chatFooter: {
+    backgroundColor: "rgb(240, 240, 240)",
+    margin: theme.spacing(1, 0, 0, -2),
+    width: "100%",
+    zIndex: -1,
   },
   inputContainer: {
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -22,66 +27,61 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   icon: {
-    width: theme.spacing(5),
+    width: theme.spacing(3),
     height: "100%",
     position: "absolute",
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    zIndex: 1,
   },
   inputRoot: {
     color: "inherit",
   },
   nameInput: {
-    padding: theme.spacing(1, 1, 1, 5),
+    padding: theme.spacing(1, 0, 1, 2),
+    margin: theme.spacing(0, 0, 0, 1),
+    borderRadius: "25px",
+    backgroundColor: "#fff",
+    fontSize: "0.8rem",
   },
+
   chatInput: {
-    padding: theme.spacing(1, 1, 1, 5),
+    padding: theme.spacing(1, 0, 1, 2),
+    margin: theme.spacing(0, 0, 0, 4),
+    borderRadius: "25px",
+    backgroundColor: "#fff",
+    fontSize: "0.8rem",
   },
+  
 }));
 
 export default function BottomBar(props) {
   const classes = useStyles();
 
   return (
-    <div className="bg-dark appbar">
-      <Toolbar>
-        <div className={classes.inputContainer} style={{ maxWidth: "70px" }}>
+    <Toolbar className={classes.chatFooter}>
+      
+      <CloudUploadIcon />
+      <div className={classes.inputContainer}>
+        <form onSubmit={props.handleSubmit}>
           <div className={classes.icon}>
-            <FaceIcon />
+            <ChatIcon />
           </div>
           <InputBase
             className="inputPlaceholder"
-            onChange={props.handleName}
-            value={props.name}
-            placeholder="Name"
+            onChange={props.handleContent}
+            value={props.content}
+            placeholder="Type your message..."
             classes={{
               root: classes.inputRoot,
-              input: classes.nameInput,
+              input: classes.chatInput,
             }}
-            inputProps={{ "aria-label": "name" }}
+            inputProps={{ "aria-label": "content" }}
           />
-        </div>
-        <div className={classes.inputContainer}>
-          <form onSubmit={props.handleSubmit}>
-            <div className={classes.icon}>
-              <ChatIcon />
-            </div>
-            <InputBase
-              className="inputPlaceholder"
-              onChange={props.handleContent}
-              value={props.content}
-              placeholder="Type your message..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.chatInput,
-              }}
-              inputProps={{ "aria-label": "content" }}
-            />
-          </form>
-        </div>
-      </Toolbar>
-    </div>
+        </form>
+      </div>
+    </Toolbar>
   );
 }

@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
   // Get the last 10 messages from the database.
   Message.find()
     .sort({ createdAt: -1 })
-    .limit(100)
+    .limit(50)
     .exec((err, messages) => {
       if (err) return console.error(err);
 

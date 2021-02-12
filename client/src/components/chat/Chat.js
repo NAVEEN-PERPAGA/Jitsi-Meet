@@ -93,33 +93,35 @@ class Chat extends React.Component {
     console.log(this.state.chat);
     return (
       <div className="App">
-        <div className="container main  text-dark">
-          <div id="chat" className="chats">
-            {this.state.chat.map((el, index) => {
-              return (
-                <>
-                  <div key={index}>
-                    <Typography variant="caption" className="name">
-                      {el.name}
-                    </Typography>
-                  </div>
-                  <div key={index}>
-                    <Typography variant="body1" className="content">
-                      {el.content}
-                    </Typography>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-          <BottomBar
-            content={this.state.content}
-            handleContent={this.handleContent.bind(this)}
-            handleName={this.handleName.bind(this)}
-            handleSubmit={this.handleSubmit.bind(this)}
-            name={this.state.name}
-          />
+        <div id="chat" className="chats">
+          {this.state.chat.map((el, index) => {
+            return (
+              <>
+                <div key={index} className="innerChatName">
+                  <Typography variant="caption" className="name">
+                    {el.name}
+                  </Typography>
+                </div>
+                <div key={index} className="outerChat">
+                  <Typography
+                    variant="body1"
+                    className="content"
+                    style={{ padding: "0px 20px", margin: "5px 10px" }}
+                  >
+                    {el.content}
+                  </Typography>
+                </div>
+              </>
+            );
+          })}
         </div>
+        <BottomBar
+          content={this.state.content}
+          handleContent={this.handleContent.bind(this)}
+          handleName={this.handleName.bind(this)}
+          handleSubmit={this.handleSubmit.bind(this)}
+          name={this.state.name}
+        />
       </div>
     );
   }
