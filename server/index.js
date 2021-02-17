@@ -3,7 +3,7 @@ const app = express();
 const http = require("http").Server(app);
 const path = require("path");
 const io = require("socket.io")(http);
-require("dotenv").config()
+require("dotenv").config();
 
 app.use(express.json());
 
@@ -12,7 +12,8 @@ const port = process.env.PORT || 5000;
 const Message = require("./Message");
 var mongoose = require("mongoose");
 
-const uri = process.env.ATLAS_URI;
+// const uri = process.env.MONGO_URI;
+const uri = process.env.mongoDb;
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -21,7 +22,7 @@ mongoose.connect(uri, {
 });
 const connection = mongoose.connection;
 connection.once("open", () => {
-  console.log("MongoDb Connection successful on prokart app");
+  console.log("MongoDb Connection successful.");
 });
 
 app.use(express.static(path.join(__dirname, "..", "client", "build")));

@@ -1,11 +1,15 @@
 import React from "react";
-import Main from "./components/Main";
-export const App = () => {
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import WelcomePage from "./components/welcomepage/WelcomePage";
+import Meeting from "./components/Main/Main";
+
+export default function App() {
   return (
     <div>
-      <Main />
+      <Router>
+        <Route path="/" exact component={WelcomePage} />
+        <Route path="/meeting" component={Meeting} />
+      </Router>
     </div>
   );
-};
-
-export default App;
+}

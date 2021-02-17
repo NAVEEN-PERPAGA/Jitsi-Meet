@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import queryString from "query-string";
 import ProgressComponent from "@material-ui/core/CircularProgress";
-function JitsiMeetComponent() {
+const JitsiMeetComponent = () => {
   const [loading, setLoading] = useState(false);
 
   const jitsiContainerStyle = {
@@ -48,6 +49,6 @@ function JitsiMeetComponent() {
       <div id="jitsi-container" style={jitsiContainerStyle} className="jitsi" />
     </div>
   );
-}
+};
 
 export default JitsiMeetComponent;

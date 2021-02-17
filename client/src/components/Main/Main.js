@@ -7,13 +7,14 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-
-import JitsiMeetComponent from "./JitsiMeetComponent";
 import ChatIcon from "@material-ui/icons/Chat";
-
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import Chat from "./chat/Chat";
+import Chat from "../chat/Chat";
+import JitsiMeetComponent from "../JitsiMeetComponent";
+import { Link } from "react-router-dom";
+
+import "./Main.css";
 const drawerWidth = 340;
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+
   hide: {
     display: "none",
   },
@@ -104,7 +106,9 @@ export default function Main() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            01s Meet
+            <Link to={"/"} className="logo">
+              01s Meet
+            </Link>
           </Typography>
           <div className="closeChat">
             <IconButton
