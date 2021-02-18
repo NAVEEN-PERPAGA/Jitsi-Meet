@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import queryString from "query-string";
 import ProgressComponent from "@material-ui/core/CircularProgress";
 const JitsiMeetComponent = () => {
   const [loading, setLoading] = useState(false);
