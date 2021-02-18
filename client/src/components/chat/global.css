@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.chats {
+  height: 78vh;
+  overflow-y: scroll;
+  border-right: none;
+}
+.main::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* chat window  */
+
+.innerChatName {
+  margin: 0px 0px 0px 10px;
+  background-color: rgb(65, 35, 35);
+}
+
+.name {
+  background-color: rgb(212, 212, 212);
+  border-radius: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  color: rgb(15, 0, 0);
+  float: left;
+  font-weight: 900;
+}
+.outerChat {
+  margin: 20px 20px 0px 20px;
+  word-wrap: break-word;
+}
+.content {
+  font-weight: 700;
+  background-color: rgb(220, 248, 198);
+  color: #000;
+  border-radius: 20px;
+  padding-left: 10px 100px;
+}

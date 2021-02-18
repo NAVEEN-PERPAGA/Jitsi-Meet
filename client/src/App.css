@@ -6,9 +6,18 @@
 
 .main-body {
   height: 100vh;
-  width: 100wh;
+  width: 100%;
 }
 
+.chatHeader {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.chatContent {
+  bottom: 0;
+  top: auto;
+}
 .welcome-page {
   height: 5vh;
   width: auto;
@@ -27,17 +36,19 @@
 
   border-radius: 100px;
 }
-.main-meet-page {
-  /* display: none; */
-  padding-top: 20px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid black;
-  height: 50vh;
-}
-.main-meet-page button {
-  margin-left: 20px;
+.welcome-page button {
   padding: 5px 20px;
-  border-radius: 100px;
+
+.chatBtn {
+  color: #fff !important;
+  font-weight: 900;
+  background-color: #000 !important;
+  border-radius: 100px !important;
 }
+
+.chatBtn:hover {
+  color: #000 !important;
+  background-color: rgb(50, 19, 226) !important;
+}
+
+/* test meet  */
